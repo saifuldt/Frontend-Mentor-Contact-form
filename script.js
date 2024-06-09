@@ -96,14 +96,14 @@ submitButton.addEventListener('click', () => {
     if (valid) {
         successMsg.style.visibility = "visible";
         successMsg.classList.remove('hide');
-        
+
         resetForms();
     } else {
         successMsg.style.visibility = "hidden";
         successMsg.classList.add('hide');
     }
 
-    
+
 });
 
 
@@ -112,7 +112,7 @@ function validateEmail(email) {
     return regex.test(email);
 };
 
-function resetForms(){
+function resetForms() {
     fName.value = '';
     lName.value = '';
     email.value = '';
