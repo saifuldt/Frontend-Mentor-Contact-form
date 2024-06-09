@@ -25,6 +25,7 @@ const submitButton = document.getElementById("subBtn");
 
 
 submitButton.addEventListener('click', () => {
+    event.preventDefault();
     let valid = true;
     const emailvl = email.value;
 
@@ -88,13 +89,15 @@ submitButton.addEventListener('click', () => {
         chkError.classList.remove('hide');
         valid = false;
     } else {
-        chkError.style.display = "none";
+        chkError.classList.add('hide');
     }
 
 
     if (valid) {
         successMsg.style.visibility = "visible";
         successMsg.classList.remove('hide');
+        
+        resetForms();
     } else {
         successMsg.style.visibility = "hidden";
         successMsg.classList.add('hide');
@@ -109,3 +112,12 @@ function validateEmail(email) {
     return regex.test(email);
 };
 
+function resetForms(){
+    fName.value = '';
+    lName.value = '';
+    email.value = '';
+    radio1.checked = false;
+    radio2.checked = false;
+    message.value = '';
+    checkbox.checked = false;
+};
